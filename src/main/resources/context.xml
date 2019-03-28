@@ -4,6 +4,16 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <bean id="terminatorQuoter" class="quoters.TerminatorQuoter">
+        <property name="messages">
+            <list>
+                <value>I'll be back</value>
+                <value>Astalavista ebay</value>
+            </list>
+        </property>
+    </bean>
 
-
+    <bean id="shakespear" class="quoters.Shakespear">
+        <property name="message" value="2 B || ! 2 B"/>
+    </bean>
 </beans>
