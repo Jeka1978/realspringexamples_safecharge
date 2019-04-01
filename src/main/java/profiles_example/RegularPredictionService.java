@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 @Profile("WINTER_IS_COMING")
-//spring.profiles.active=WINTER_IS_COMING
 public class RegularPredictionService implements PredictionService {
     @Override
     public boolean willSurviveThisWinter(String name) {
