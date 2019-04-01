@@ -10,6 +10,7 @@ import java.util.Random;
 
 public class MessageGenerator {
     private Random random = new Random();
+
     private MessageSender sender;
     @Scheduled(fixedDelay = 1000)
     public void generate(){
