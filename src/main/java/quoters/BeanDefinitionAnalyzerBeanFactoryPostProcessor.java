@@ -14,6 +14,7 @@ public class BeanDefinitionAnalyzerBeanFactoryPostProcessor implements BeanFacto
         String[] names = beanFactory.getBeanDefinitionNames();
         for (String name : names) {
             BeanDefinition beanDefinition = beanFactory.getBeanDefinition(name);
+            String beanClassName = beanDefinition.getBeanClassName();
             if (beanDefinition.isPrototype() && beanDefinition.getDestroyMethodName() != null) {
                 throw new RuntimeException("you are an IDIOT");
             }
