@@ -28,6 +28,7 @@ public class TalkingRobotImpl implements TalkingRobot {
 
     @Override
     @PostConstruct
+    @Deprecated
     public void talk() {
         quoters.forEach(Quoter::sayQuote);
     }

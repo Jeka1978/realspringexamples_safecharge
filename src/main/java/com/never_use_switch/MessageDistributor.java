@@ -5,4 +5,6 @@ package com.never_use_switch;
  */
 public interface MessageDistributor {
     void distribute(String message);
+
+    int myCode();
 }

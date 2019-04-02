@@ -5,10 +5,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 /**
  * @author Evgeny Borisov
  */
-
+//
 @Book
 public class Shakespear implements Quoter {
 
@@ -24,9 +26,13 @@ public class Shakespear implements Quoter {
     private int repeat;
 
     @Override
+    @Deprecated
     public void sayQuote() {
         for (int i = 0; i < repeat; i++) {
             System.out.println(message);
         }
     }
 }
+
+
+

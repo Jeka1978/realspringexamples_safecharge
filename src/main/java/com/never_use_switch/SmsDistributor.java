@@ -8,10 +8,15 @@ import static com.never_use_switch.DistributionType.SMS;
 /**
  * @author Evgeny Borisov
  */
-@Component(SMS)
+@Component
 public class SmsDistributor implements MessageDistributor {
     @Override
     public void distribute(String message) {
         System.out.println(message+" was sent by sms");
+    }
+
+    @Override
+    public int myCode() {
+        return 1;
     }
 }

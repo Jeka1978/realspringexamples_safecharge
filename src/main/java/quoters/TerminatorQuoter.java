@@ -1,6 +1,7 @@
 package quoters;
 
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -16,6 +17,10 @@ import static java.util.Arrays.asList;
 @Film
 public class TerminatorQuoter implements Quoter {
 
+    @Autowired
+    @Qualifier("terminatorQuoter")
+    private Quoter myProxy;
+
     private List<String> messages;
 
     @Value("${terminator}")
@@ -26,6 +31,11 @@ public class TerminatorQuoter implements Quoter {
     @Override
     public void sayQuote() {
         messages.forEach(System.out::println);
+    }
+
+
+    public void sayBla(){
+        System.out.println("Blaa");
     }
 
 

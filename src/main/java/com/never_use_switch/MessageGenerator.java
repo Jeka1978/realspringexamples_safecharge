@@ -16,6 +16,7 @@ public class MessageGenerator {
 
     @Autowired
     private MessageSender sender;
+
     private int i;
 
     @Scheduled(fixedDelay = 1000)
