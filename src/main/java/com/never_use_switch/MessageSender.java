@@ -1,17 +1,27 @@
 package com.never_use_switch;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
+
 /**
  * @author Evgeny Borisov
  */
 
+@Service
 public class MessageSender {
 
-    public void sendMail(int type) {
-        if (type == 1) {
-            System.out.println("sms was sent");
+    @Autowired
+    private Map<String,MessageDistributor> distributors;
+
+    public void sendMessage(String message, int type) {
+        MessageDistributor messageDistributor = distributors.get(Integer.toString(type));
+        if (messageDistributor == null) {
+            throw new UnsupportedOperationException(type + " not supported yet");
         }
-        if(type==2){
-            System.out.println("mail was sent");
-        }
+        messageDistributor.distribute(message);
+
     }
 }
